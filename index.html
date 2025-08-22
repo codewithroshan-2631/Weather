@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="weather-container">
+    <h1 class="app-title"><i class="fas fa-cloud-sun"></i> Weather Forecast</h1>
+    
+    <div class="search-container">
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="unit-toggle">
+      <button class="unit-btn active" id="celsiusBtn" onclick="switchUnit('c')">°C</button>
+      <button class="unit-btn" id="fahrenheitBtn" onclick="switchUnit('f')">°F</button>
+    </div>
+
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+    </div>
+
+    <div class="error-message" id="errorMessage"></div>
+
+    <div class="weather-info" id="weatherInfo">
+      <h2 id="cityName">Weather App</h2>
+      <p class="date" id="date"></p>
+      <img class="weather-icon" id="weatherIcon" src="" alt="Weather Icon">
+      <p class="temperature" id="temperature"></p>
+      <p class="feels-like" id="feelsLike"></p>
+      <p class="condition" id="condition"></p>
+      
+      <div class="weather-details">
+        <div class="detail">
+          <i class="fas fa-wind"></i>
+          <div class="detail-title">Wind</div>
+          <div class="detail-value" id="wind"></div>
+        </div>
+        <div class="detail">
+          <i class="fas fa-tint"></i>
+          <div class="detail-title">Humidity</div>
+          <div class="detail-value" id="humidity"></div>
+        </div>
+        <div class="detail">
+          <i class="fas fa-compress-alt"></i>
+          <div class="detail-title">Pressure</div>
+          <div class="detail-value" id="pressure"></div>
+        </div>
+        <div class="detail">
+          <i class="fas fa-eye"></i>
+          <div class="detail-title">Visibility</div>
+          <div class="detail-value" id="visibility"></div>
+        </div>
+        <div class="detail">
+          <i class="fas fa-sun"></i>
+          <div class="detail-title">UV Index</div>
+          <div class="detail-value" id="uv"></div>
+        </div>
+        <div class="detail">
+          <i class="fas fa-cloud-rain"></i>
+          <div class="detail-title">Precipitation</div>
+          <div class="detail-value" id="precip"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="forecast-container" id="forecastContainer">
+      <div class="forecast-header">3-Day Forecast</div>
+      <div class="forecast-items" id="forecastItems"></div>
+    </div>
+
+    <div class="recent-searches">
+      <div class="recent-header" id="recentHeader">
+        <div class="recent-title">Recent Searches</div>
+        <div class="chevron" id="chevron">▼</div>
+      </div>
+      <div class="recent-list" id="recentList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
